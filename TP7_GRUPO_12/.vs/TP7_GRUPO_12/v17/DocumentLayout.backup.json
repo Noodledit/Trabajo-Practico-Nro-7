@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Usuarios\\Noodledit\\Desktop\\Tup\\Tercer Cuatrimestre\\Programacion III\\TPs\\Trabajo-Practico-Nro-7\\TP7_GRUPO_12\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{148E4EB2-6410-4D99-A597-7163C76E1C16}|TP7_GRUPO_12\\TP7_GRUPO_12.csproj|e:\\usuarios\\noodledit\\desktop\\tup\\tercer cuatrimestre\\programacion iii\\tps\\trabajo-practico-nro-7\\tp7_grupo_12\\tp7_grupo_12\\listadosucursalesseleccionados.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{148E4EB2-6410-4D99-A597-7163C76E1C16}|TP7_GRUPO_12\\TP7_GRUPO_12.csproj|solutionrelative:tp7_grupo_12\\listadosucursalesseleccionados.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{148E4EB2-6410-4D99-A597-7163C76E1C16}|TP7_GRUPO_12\\TP7_GRUPO_12.csproj|e:\\usuarios\\noodledit\\desktop\\tup\\tercer cuatrimestre\\programacion iii\\tps\\trabajo-practico-nro-7\\tp7_grupo_12\\tp7_grupo_12\\seleccionarsucursales.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{148E4EB2-6410-4D99-A597-7163C76E1C16}|TP7_GRUPO_12\\TP7_GRUPO_12.csproj|solutionrelative:tp7_grupo_12\\seleccionarsucursales.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ListadoSucursalesSeleccionados.aspx",
+              "DocumentMoniker": "E:\\Usuarios\\Noodledit\\Desktop\\Tup\\Tercer Cuatrimestre\\Programacion III\\TPs\\Trabajo-Practico-Nro-7\\TP7_GRUPO_12\\TP7_GRUPO_12\\ListadoSucursalesSeleccionados.aspx",
+              "RelativeDocumentMoniker": "TP7_GRUPO_12\\ListadoSucursalesSeleccionados.aspx",
+              "ToolTip": "E:\\Usuarios\\Noodledit\\Desktop\\Tup\\Tercer Cuatrimestre\\Programacion III\\TPs\\Trabajo-Practico-Nro-7\\TP7_GRUPO_12\\TP7_GRUPO_12\\ListadoSucursalesSeleccionados.aspx",
+              "RelativeToolTip": "TP7_GRUPO_12\\ListadoSucursalesSeleccionados.aspx",
+              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-05-15T18:25:56.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SeleccionarSucursales.aspx",
+              "DocumentMoniker": "E:\\Usuarios\\Noodledit\\Desktop\\Tup\\Tercer Cuatrimestre\\Programacion III\\TPs\\Trabajo-Practico-Nro-7\\TP7_GRUPO_12\\TP7_GRUPO_12\\SeleccionarSucursales.aspx",
+              "RelativeDocumentMoniker": "TP7_GRUPO_12\\SeleccionarSucursales.aspx",
+              "ToolTip": "E:\\Usuarios\\Noodledit\\Desktop\\Tup\\Tercer Cuatrimestre\\Programacion III\\TPs\\Trabajo-Practico-Nro-7\\TP7_GRUPO_12\\TP7_GRUPO_12\\SeleccionarSucursales.aspx",
+              "RelativeToolTip": "TP7_GRUPO_12\\SeleccionarSucursales.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-05-15T18:25:15.24Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
