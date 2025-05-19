@@ -10,16 +10,9 @@
         .auto-style1 {
             width: 100%;
         }
-        .auto-style2 {
-            width: 140px;
-        }
         .auto-style3 {
             height: 23px;
             width: 114px;
-        }
-        .auto-style4 {
-            width: 140px;
-            height: 23px;
         }
         .auto-style9 {
             width: 207px;
@@ -40,10 +33,16 @@
         }
         .auto-style14 {
             height: 23px;
-            width: 187px;
-        }
+            }
         .auto-style15 {
             width: 114px;
+        }
+        .auto-style16 {
+            width: 260px;
+        }
+        .auto-style17 {
+            height: 23px;
+            width: 260px;
         }
     </style>
 </head>
@@ -53,7 +52,7 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style15">&nbsp;</td>
-                    <td class="auto-style2">
+                    <td class="auto-style16">
                         <asp:HyperLink ID="HLListadoSucursales" runat="server" Font-Overline="False" Font-Underline="True" ForeColor="Blue">Listado de Sucursales</asp:HyperLink>
                     </td>
                     <td class="auto-style13">&nbsp;</td>
@@ -64,14 +63,14 @@
                 </tr>
                 <tr>
                     <td class="auto-style15">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style16">&nbsp;</td>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style9">&nbsp;</td>
                     <td class="auto-style10">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style3"></td>
-                    <td class="auto-style4">
+                    <td class="auto-style17">
                         <asp:Label ID="ListadoSucursales" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style14"></td>
@@ -80,56 +79,58 @@
                 </tr>
                 <tr>
                     <td class="auto-style15">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style16">&nbsp;</td>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style9">&nbsp;</td>
                     <td class="auto-style10">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style3"></td>
-                    <td class="auto-style4"></td>
-                    <td class="auto-style14"></td>
-                    <td class="auto-style11"></td>
+                    <td class="auto-style17">Búsqueda por nombre de sucursal:</td>
+                    <td class="auto-style14" colspan="2">
+                        <asp:TextBox ID="txtSucursal" runat="server" style="margin-left: 64px" Width="250px"></asp:TextBox>
+                        <asp:Button ID="btnBuscar" runat="server" Height="22px" style="margin-left: 20px" Text="Button" />
+                    </td>
                     <td class="auto-style12"></td>
                 </tr>
                 <tr>
                     <td class="auto-style3"></td>
-                    <td class="auto-style4"></td>
+                    <td class="auto-style17"></td>
                     <td class="auto-style14"></td>
                     <td class="auto-style11"></td>
                     <td class="auto-style12"></td>
                 </tr>
                 <tr>
                     <td class="auto-style15">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style16">&nbsp;</td>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style9">&nbsp;</td>
                     <td class="auto-style10">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style15">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style16">&nbsp;</td>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style9">&nbsp;</td>
                     <td class="auto-style10">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style15">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style16">&nbsp;</td>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style9">&nbsp;</td>
                     <td class="auto-style10">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style15">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style16">&nbsp;</td>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style9">&nbsp;</td>
                     <td class="auto-style10">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style15">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style16">&nbsp;</td>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style9">&nbsp;</td>
                     <td class="auto-style10">&nbsp;</td>
