@@ -24,30 +24,30 @@ namespace TP7_GRUPO_12
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control HLListadoSucursales.
+        /// Control hlListadoSucursales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HLListadoSucursales;
+        protected global::System.Web.UI.WebControls.HyperLink hlListadoSucursales;
 
         /// <summary>
-        /// Control HLMostrarSucursalesS.
+        /// Control hlMostrarSucursalesS.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HLMostrarSucursalesS;
+        protected global::System.Web.UI.WebControls.HyperLink hlMostrarSucursalesS;
 
         /// <summary>
-        /// Control MostrarSucursales.
+        /// Control lblMensaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MostrarSucursales;
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
     }
 }
