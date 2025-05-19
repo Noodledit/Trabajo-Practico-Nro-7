@@ -68,6 +68,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Imagenes\1.jpg" />
+    <Content Include="Imagenes\10.jpg" />
+    <Content Include="Imagenes\11.jpg" />
+    <Content Include="Imagenes\12.jpg" />
+    <Content Include="Imagenes\13.jpg" />
+    <Content Include="Imagenes\2.jpg" />
+    <Content Include="Imagenes\3.jpg" />
+    <Content Include="Imagenes\4.jpg" />
+    <Content Include="Imagenes\5.jpg" />
+    <Content Include="Imagenes\6.jpg" />
+    <Content Include="Imagenes\7.jpg" />
+    <Content Include="Imagenes\8.jpg" />
+    <Content Include="Imagenes\9.jpg" />
     <Content Include="ListadoSucursalesSeleccionados.aspx" />
     <Content Include="SeleccionarSucursales.aspx" />
     <Content Include="Web.config" />
@@ -103,7 +116,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Imagenes\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
