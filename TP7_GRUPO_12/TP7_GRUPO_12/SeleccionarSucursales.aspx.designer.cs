@@ -42,6 +42,24 @@ namespace TP7_GRUPO_12
         protected global::System.Web.UI.WebControls.HyperLink hlMostrarSucursalesS;
 
         /// <summary>
+        /// Control revBuscar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revBuscar;
+
+        /// <summary>
+        /// Control rvBuscar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvBuscar;
+
+        /// <summary>
         /// Control txtBusquedaSucursal.
         /// </summary>
         /// <remarks>
@@ -58,24 +76,6 @@ namespace TP7_GRUPO_12
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBuscar;
-
-        /// <summary>
-        /// Control rvBuscar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvBuscar;
-
-        /// <summary>
-        /// Control revBuscar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revBuscar;
 
         /// <summary>
         /// Control DataList3.
@@ -114,15 +114,6 @@ namespace TP7_GRUPO_12
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource_Secundary_BDSucursal_Sucursales0;
 
         /// <summary>
-        /// Control lblMensaje.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensaje;
-
-        /// <summary>
         /// Control SqlDataSource_BDSucursal_Provincias.
         /// </summary>
         /// <remarks>
@@ -130,5 +121,14 @@ namespace TP7_GRUPO_12
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource_BDSucursal_Provincias;
+
+        /// <summary>
+        /// Control lblMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
     }
 }

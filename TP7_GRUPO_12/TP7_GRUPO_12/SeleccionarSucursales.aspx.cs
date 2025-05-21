@@ -14,13 +14,23 @@ namespace TP7_GRUPO_12
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
+        protected void btnProvincia_Command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "cmdProvinciaSelect")
+            {
+                lblMensaje.Text = "Provincia seleccionada: " + e.CommandArgument.ToString();
+                SqlDataSource_BDSucursal_Sucursales.SelectCommand = "SELECT * FROM Sucursal WHERE idProvincia = " + e.CommandArgument.ToString();
+                ListViewSucursales.DataSource = SqlDataSource_BDSucursal_Sucursales;
+                ListViewSucursales.DataBind();
+            }
+        }
+
         protected void btnSeleccionar_Command(object sender, CommandEventArgs e)
         {
-            if (e.CommandName == "eventoSeleccionar")
-            { 
-                lblMensaje.Text = "Sucursal seleccionada: " + e.CommandArgument.ToString();
+            if (e.CommandName == "cmdSeleccionar")
+            {
+               
             }
-
         }
     }
 }
