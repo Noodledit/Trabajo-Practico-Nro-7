@@ -13,5 +13,14 @@ namespace TP7_GRUPO_12
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
+
+        protected void btnSeleccionar_Command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "eventoSeleccionar")
+            { 
+                lblMensaje.Text = "Sucursal seleccionada: " + e.CommandArgument.ToString();
+            }
+
+        }
     }
 }
