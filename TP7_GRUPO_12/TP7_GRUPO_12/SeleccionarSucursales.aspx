@@ -112,7 +112,7 @@ width: 14%; }
                         <asp:HyperLink ID="hlListadoSucursales" runat="server" Font-Overline="False" Font-Underline="True" ForeColor="Blue">Listado de Sucursales</asp:HyperLink>
                     </td>
                     <td class="auto-style60">
-                        <asp:HyperLink ID="hlMostrarSucursalesS" runat="server" Font-Underline="True" ForeColor="Blue">Mostrar Sucursales Seleccionadas</asp:HyperLink>
+                        <asp:HyperLink ID="hlMostrarSucursalesS" runat="server" Font-Underline="True" ForeColor="Blue" NavigateUrl="~/ListadoSucursalesSeleccionados.aspx">Mostrar Sucursales Seleccionadas</asp:HyperLink>
                     </td>
                     <td class="auto-style33"></td>
                     <td class="auto-style33"></td>
@@ -168,7 +168,7 @@ width: 14%; }
                 </tr>
                 <tr>
                     <td class="auto-style31">
-                        <asp:DataList ID="DataList3" runat="server" style="margin-top: 0px" DataSourceID="SqlDataSource_BDSucursal_Provincias">
+                        <asp:DataList ID="dlProvincias" runat="server" style="margin-top: 0px" DataSourceID="SqlDataSource_BDSucursal_Provincias">
                             <ItemTemplate>
                                 <table class="auto-style1">
                                     <tr>
@@ -320,7 +320,7 @@ width: 14%; }
                 <tr>
                     <td class="auto-style31"></td>
                     <td class="auto-style17" colspan="3"></td>
-                    <td class="auto-style43" colspan="3">&nbsp;</td>
+                    <td class="auto-style43" colspan="3"></td>
                     <td class="auto-style60"></td>
                     <td class="auto-style33"></td>
                     <td class="auto-style33"></td>
