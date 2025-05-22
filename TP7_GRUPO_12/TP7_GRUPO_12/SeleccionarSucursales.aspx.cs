@@ -42,6 +42,8 @@ namespace TP7_GRUPO_12
                 //acceder en el listview el item donde el btn se este precionando
                 ListViewItem item = ((Button)sender).NamingContainer as ListViewItem;
 
+                Label lblNombre = item.FindControl("NombreSucursalLabel") as Label;
+
 
             }
         }
