@@ -36,7 +36,13 @@ namespace TP7_GRUPO_12
         {
             if (e.CommandName == "cmdSeleccionar")
             {
-               
+                //El id se pasa por el CommandArgument
+                int idSucursal = int.Parse(e.CommandArgument.ToString());
+
+                //acceder en el listview el item donde el btn se este precionando
+                ListViewItem item = ((Button)sender).NamingContainer as ListViewItem;
+
+
             }
         }
 
