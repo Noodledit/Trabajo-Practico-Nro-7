@@ -34,6 +34,34 @@ namespace TP7_GRUPO_12
             }
         }
 
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string filtro = txtBuscar.Text.Trim();
 
+            //Chequeo que no este vacio y cambio el comando
+            if (!string.IsNullOrEmpty(filtro))
+            {
+                SqlDataSource_BDSucursal_Sucursales.SelectCommand = "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] " + "FROM [Sucursal] WHERE LOWER(NombreSucursal) LIKE LOWER(@nombre)";
+                SqlDataSource_BDSucursal_Sucursales.SelectParameters.Clear();
+                SqlDataSource_BDSucursal_Sucursales.SelectParameters.Add("nombre", "%" + filtro + "%");
+            }
+            else
+            {
+                SqlDataSource_BDSucursal_Sucursales.SelectCommand = "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal]";
+                SqlDataSource_BDSucursal_Sucursales.SelectParameters.Clear();
+            }
+
+            ListViewSucursales.DataBind();
+
+            // Verifico si la listview esta vacia
+            if (ListViewSucursales.Items.Count == 0)
+            {
+                lblMensaje.Text = "No se encontraron sucursales con ese nombre.";
+            }
+            else
+            {
+                lblMensaje.Text = "";
+            }
+        }
     }
 }

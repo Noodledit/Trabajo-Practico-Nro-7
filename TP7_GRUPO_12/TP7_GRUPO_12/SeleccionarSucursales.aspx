@@ -137,8 +137,7 @@ width: 14%; }
                     <td class="auto-style67" rowspan="2"></td>
                     <td class="auto-style68" colspan="6"></td>
                     <td class="auto-style69" rowspan="2">
-                        <asp:RegularExpressionValidator ID="revBuscar" runat="server" ControlToValidate="txtBusquedaSucursal" ForeColor="Red" ValidationExpression="^[A-Za-z]+$" ValidationGroup="GrupoBusqueda">Solo se pueden ingresar letras.</asp:RegularExpressionValidator>
-                        <asp:RequiredFieldValidator ID="rvBuscar" runat="server" ControlToValidate="txtBusquedaSucursal" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="GrupoBusqueda">El campo no puede estar vacio.</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revBuscar" runat="server" ControlToValidate="txtBuscar" ForeColor="Red" ValidationExpression="^[A-Za-z]+$" ValidationGroup="GrupoBusqueda">Solo se pueden ingresar letras.</asp:RegularExpressionValidator>
                         </td>
                     <td class="auto-style70" rowspan="2"></td>
                     <td class="auto-style70" rowspan="2"></td>
@@ -146,10 +145,10 @@ width: 14%; }
                 <tr>
                     <td class="auto-style74" colspan="2">Búsqueda por nombre de sucursal:</td>
                     <td class="auto-style75" colspan="2">
-                        <asp:TextBox ID="txtBusquedaSucursal" runat="server" style="margin-left: 64px" Width="250px" ValidationGroup="GrupoBusqueda" Wrap="False"></asp:TextBox>
+                        <asp:TextBox ID="txtBuscar" runat="server" style="margin-left: 64px" Width="250px" ValidationGroup="GrupoBusqueda" Wrap="False"></asp:TextBox>
                         </td>
                     <td class="auto-style68" colspan="2">
-                        <asp:Button ID="btnBuscar" runat="server" Height="22px" style="margin-left: 20px" Text="Buscar" ValidationGroup="GrupoBusqueda" />
+                        <asp:Button ID="btnBuscar" runat="server" Height="22px" style="margin-left: 20px" Text="Buscar" ValidationGroup="GrupoBusqueda" OnClick="btnBuscar_Click" />
                     </td>
                 </tr>
                 <tr>

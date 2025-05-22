@@ -51,22 +51,13 @@ namespace TP7_GRUPO_12
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revBuscar;
 
         /// <summary>
-        /// rvBuscar control.
+        /// txtBuscar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvBuscar;
-
-        /// <summary>
-        /// txtBusquedaSucursal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBusquedaSucursal;
+        protected global::System.Web.UI.WebControls.TextBox txtBuscar;
 
         /// <summary>
         /// btnBuscar control.
