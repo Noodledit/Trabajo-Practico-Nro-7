@@ -20,8 +20,14 @@ namespace TP7_GRUPO_12
             if (e.CommandName == "cmdProvinciaSelect")
             {
                 lblMensaje.Text = "Provincia seleccionada: " + e.CommandArgument.ToString();
-                SqlDataSource_BDSucursal_Sucursales.SelectCommand = "SELECT * FROM Sucursal WHERE idProvincia = " + e.CommandArgument.ToString();
-                ListViewSucursales.DataSource = SqlDataSource_BDSucursal_Sucursales;
+                SqlDataSource_BDSucursal_Sucursales.SelectCommand = "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal]" +
+                                                                    " FROM Sucursal WHERE Id_ProvinciaSucursal = @IdProvincia";
+
+                SqlDataSource_BDSucursal_Sucursales.SelectParameters.Clear();
+                SqlDataSource_BDSucursal_Sucursales.SelectParameters.Add("IdProvincia", e.CommandArgument.ToString());
+          
+                lblMensaje.Text = "Provincia seleccionada: " + e.CommandArgument.ToString();
+
                 ListViewSucursales.DataBind();
             }
         }
@@ -41,10 +47,14 @@ namespace TP7_GRUPO_12
             //Chequeo que no este vacio y cambio el comando
             if (!string.IsNullOrEmpty(filtro))
             {
-                SqlDataSource_BDSucursal_Sucursales.SelectCommand = "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] " + "FROM [Sucursal] WHERE LOWER(NombreSucursal) LIKE LOWER(@nombre)";
+                SqlDataSource_BDSucursal_Sucursales.SelectCommand =
+                    "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] " +
+                    "FROM [Sucursal] WHERE LOWER(NombreSucursal) LIKE '%' + LOWER(@nombre) + '%'";
+
                 SqlDataSource_BDSucursal_Sucursales.SelectParameters.Clear();
-                SqlDataSource_BDSucursal_Sucursales.SelectParameters.Add("nombre", "%" + filtro + "%");
+                SqlDataSource_BDSucursal_Sucursales.SelectParameters.Add("nombre", filtro);
             }
+
             else
             {
                 SqlDataSource_BDSucursal_Sucursales.SelectCommand = "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal]";
@@ -56,7 +66,7 @@ namespace TP7_GRUPO_12
             // Verifico si la listview esta vacia
             if (ListViewSucursales.Items.Count == 0)
             {
-                lblMensaje.Text = "No se encontraron sucursales con ese nombre.";
+                lblMensaje.Text = "No se encontraron sucursales con ese Nombre.";
             }
             else
             {

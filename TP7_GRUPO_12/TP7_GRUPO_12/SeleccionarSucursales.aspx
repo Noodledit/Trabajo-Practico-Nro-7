@@ -10,31 +10,14 @@
         .auto-style1 { width: 100%; }
         .auto-style16 { width: 307px; }
         .auto-style17 { height: 23px; width: 307px; }
-        .auto-style20 { height: 7px; 
-width: 99px; }
         .auto-style23 { width: 225px; }
-        .auto-style24 { height: 7px; 
-width: 14%; }
+        .auto-style24 { width: 14%; }
         .auto-style31 {
             height: 23px;
-            width: 8%;
-        }
-        .auto-style33 {
-            height: 23px;
-            width: 1%;
+            width: 6%;
         }
         .auto-style35 {
-            width: 8%;
-        }
-        .auto-style37 {
-            width: 1%;
-        }
-        .auto-style41 {
-            width: 283px;
-        }
-        .auto-style43 {
-            height: 23px;
-            width: 283px;
+            width: 6%;
         }
         .auto-style44 {
             width: 835px;
@@ -55,19 +38,15 @@ width: 14%; }
         }
         .auto-style64 {
             height: 22px;
-            width: 8%;
+            width: 6%;
         }
         .auto-style65 {
             height: 22px;
             width: 30%;
         }
-        .auto-style66 {
-            height: 22px;
-            width: 1%;
-        }
         .auto-style67 {
             height: 32px;
-            width: 8%;
+            width: 6%;
         }
         .auto-style68 {
             height: 32px;
@@ -77,28 +56,33 @@ width: 14%; }
             height: 32px;
             width: 30%;
         }
-        .auto-style70 {
-            height: 32px;
-            width: 1%;
-        }
-        .auto-style71 {
-            width: 8%;
-            height: 7px;
-        }
-        .auto-style72 {
-            height: 7px;
-        }
-        .auto-style73 {
-            width: 1%;
-            height: 7px;
-        }
         .auto-style74 {
             height: 32px;
             width: 219px;
         }
         .auto-style75 {
             height: 32px;
-            width: 241px;
+            width: 229px;
+        }
+        .auto-style76 {
+            width: 229px;
+        }
+        .auto-style77 {
+            height: 32px;
+            width: 590px;
+        }
+        .auto-style78 {
+            width: 590px;
+        }
+        .auto-style79 {
+            height: 32px;
+        }
+        .auto-style80 {
+            height: 23px;
+            width: 935px;
+        }
+        .auto-style81 {
+            width: 935px;
         }
     </style>
 </head>
@@ -108,62 +92,62 @@ width: 14%; }
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style31"></td>
-                    <td class="auto-style57" colspan="6">
+                    <td class="auto-style57" colspan="2">
                         <asp:HyperLink ID="hlListadoSucursales" runat="server" Font-Overline="False" Font-Underline="True" ForeColor="Blue">Listado de Sucursales</asp:HyperLink>
                     </td>
-                    <td class="auto-style60">
+                    <td class="auto-style80" colspan="3">
                         <asp:HyperLink ID="hlMostrarSucursalesS" runat="server" Font-Underline="True" ForeColor="Blue" NavigateUrl="~/ListadoSucursalesSeleccionados.aspx">Mostrar Sucursales Seleccionadas</asp:HyperLink>
                     </td>
-                    <td class="auto-style33"></td>
-                    <td class="auto-style33"></td>
+                    <td class="auto-style60">
+                        &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style31"></td>
-                    <td class="auto-style57" colspan="6"></td>
+                    <td class="auto-style31">
+                        <asp:SqlDataSource ID="SqlDataSource_Secundary_BDSucursal_Sucursales" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringBDSucursales %>" SelectCommand="SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
+                    </td>
+                    <td class="auto-style57" colspan="5"></td>
                     <td class="auto-style60"></td>
-                    <td class="auto-style33"></td>
-                    <td class="auto-style33"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style31"></td>
-                    <td class="auto-style57" colspan="6">
+                    <td class="auto-style31">
+                        <asp:SqlDataSource ID="SqlDataSource_BDSucursal_Sucursales" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString6 %>" SelectCommand="SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [DireccionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
+                        </td>
+                    <td class="auto-style57" colspan="5">
                         <h1>Listado de Sucursales</h1>
                     </td>
                     <td class="auto-style60"></td>
-                    <td class="auto-style33"></td>
-                    <td class="auto-style33"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style67" rowspan="2"></td>
-                    <td class="auto-style68" colspan="6"></td>
-                    <td class="auto-style69" rowspan="2">
-                        <asp:RegularExpressionValidator ID="revBuscar" runat="server" ControlToValidate="txtBuscar" ForeColor="Red" ValidationExpression="^[A-Za-z]+$" ValidationGroup="GrupoBusqueda">Solo se pueden ingresar letras.</asp:RegularExpressionValidator>
-                        </td>
-                    <td class="auto-style70" rowspan="2"></td>
-                    <td class="auto-style70" rowspan="2"></td>
+                    <td class="auto-style67" rowspan="2">&nbsp;</td>
+                    <td class="auto-style68" colspan="5">&nbsp;</td>
+                    <td class="auto-style69">
+                        &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style74" colspan="2">Búsqueda por nombre de sucursal:</td>
+                    <td class="auto-style74">Búsqueda por nombre de sucursal:</td>
                     <td class="auto-style75" colspan="2">
-                        <asp:TextBox ID="txtBuscar" runat="server" style="margin-left: 64px" Width="250px" ValidationGroup="GrupoBusqueda" Wrap="False"></asp:TextBox>
+                        <asp:TextBox ID="txtBuscar" runat="server" ValidationGroup="GrupoBusqueda" Width="257px"></asp:TextBox>
                         </td>
-                    <td class="auto-style68" colspan="2">
+                    <td class="auto-style77">
                         <asp:Button ID="btnBuscar" runat="server" Height="22px" style="margin-left: 20px" Text="Buscar" ValidationGroup="GrupoBusqueda" OnClick="btnBuscar_Click" />
                     </td>
+                    <td class="auto-style79" colspan="2">
+                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="auto-style71"></td>
-                    <td class="auto-style24">&nbsp;</td>
-                    <td class="auto-style72" colspan="2">
+                    <td class="auto-style35">
+                        <asp:SqlDataSource ID="SqlDataSource_BDSucursal_Provincias" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString6 %>" SelectCommand="SELECT [DescripcionProvincia], [Id_Provincia] FROM [Provincia]"></asp:SqlDataSource>
+                    </td>
+                    <td class="auto-style24"></td>
+                    <td class="auto-style76" colspan="2">
+                        <asp:RegularExpressionValidator ID="revBuscar" runat="server" ControlToValidate="txtBuscar" ForeColor="Red" ValidationExpression="^[A-Za-z]+$" ValidationGroup="GrupoBusqueda">Solo se pueden ingresar letras.</asp:RegularExpressionValidator>
+                        </td>
+                    <td class="auto-style78">
                         &nbsp;</td>
-                    <td class="auto-style20" colspan="2">
-                        &nbsp;</td>
-                    <td class="auto-style72">
-                        &nbsp;</td>
-                    <td class="auto-style72" colspan="2">
+                    <td colspan="2">
                         <br />
                     </td>
-                    <td class="auto-style73"></td>
                 </tr>
                 <tr>
                     <td class="auto-style31">
@@ -172,7 +156,7 @@ width: 14%; }
                                 <table class="auto-style1">
                                     <tr>
                                         <td>
-                                            <asp:Button ID="btnProvincia" runat="server" Text='<%# Eval("DescripcionProvincia") %>' Width="200px" Height="40px" CommandName="cmdProvinciaSelect" OnCommand="btnProvincia_Command" />
+                                            <asp:Button ID="btnProvincia" runat="server" Text='<%# Eval("DescripcionProvincia") %>' Width="200px" Height="40px" CommandName="cmdProvinciaSelect" OnCommand="btnProvincia_Command" CommandArgument='<%# Eval("Id_Provincia") %>' />
                                         </td>
                                     </tr>
                                     <tr>
@@ -182,8 +166,8 @@ width: 14%; }
                             </ItemTemplate>
                         </asp:DataList>
                     </td>
-                    <td class="auto-style57" colspan="6">
-                        <asp:ListView ID="ListViewSucursales" runat="server" DataSourceID="SqlDataSource_Secundary_BDSucursal_Sucursales0" style="margin-top: 250px" GroupItemCount="3" DataKeyNames="Id_Sucursal">                            
+                    <td class="auto-style57" colspan="5">
+                        <asp:ListView ID="ListViewSucursales" runat="server" DataSourceID="SqlDataSource_BDSucursal_Sucursales" style="margin-top: 250px" GroupItemCount="3" DataKeyNames="Id_Sucursal">                            
                             <EditItemTemplate>
                                 <td runat="server" style="background-color:#008A8C;color: #FFFFFF;">NombreSucursal:
                                     <asp:TextBox ID="NombreSucursalTextBox" runat="server" Text='<%# Bind("NombreSucursal") %>' />
@@ -288,59 +272,43 @@ width: 14%; }
                         </asp:ListView>
                     </td>
                     <td class="auto-style60">
-                        <asp:SqlDataSource ID="SqlDataSource_BDSucursal_Sucursales" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString6 %>" SelectCommand="SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [DireccionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
-                        <asp:SqlDataSource ID="SqlDataSource_Secundary_BDSucursal_Sucursales0" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringBDSucursales %>" SelectCommand="SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
-                    </td>
-                    <td class="auto-style33"></td>
-                    <td class="auto-style33"></td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style35">
-                        <asp:SqlDataSource ID="SqlDataSource_BDSucursal_Provincias" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString6 %>" SelectCommand="SELECT [DescripcionProvincia] FROM [Provincia]"></asp:SqlDataSource>
-                    </td>
-                    <td class="auto-style23" colspan="3">
                         &nbsp;</td>
-                    <td class="auto-style41" colspan="3">&nbsp;</td>
+                    <td class="auto-style23" colspan="2">
+                        &nbsp;</td>
+                    <td class="auto-style81" colspan="3">&nbsp;</td>
                     <td class="auto-style61">
                         &nbsp;</td>
-                    <td class="auto-style37">&nbsp;</td>
-                    <td class="auto-style37">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style64"></td>
-                    <td class="auto-style23" colspan="3">
+                    <td class="auto-style23" colspan="2">
                         &nbsp;</td>
-                    <td class="auto-style41" colspan="3">&nbsp;</td>
+                    <td class="auto-style81" colspan="3">&nbsp;</td>
                     <td class="auto-style65">
                     </td>
-                    <td class="auto-style66"></td>
-                    <td class="auto-style66"></td>
                 </tr>
                 <tr>
                     <td class="auto-style31"></td>
-                    <td class="auto-style17" colspan="3"></td>
-                    <td class="auto-style43" colspan="3"></td>
+                    <td class="auto-style17" colspan="2"></td>
+                    <td class="auto-style80" colspan="3"></td>
                     <td class="auto-style60"></td>
-                    <td class="auto-style33"></td>
-                    <td class="auto-style33"></td>
                 </tr>
                 <tr>
                     <td class="auto-style35">&nbsp;</td>
-                    <td class="auto-style16" colspan="3">
-                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
-                    </td>
-                    <td class="auto-style41" colspan="3">
+                    <td class="auto-style16" colspan="2">
+                        &nbsp;</td>
+                    <td class="auto-style81" colspan="3">
                         &nbsp;</td>
                     <td class="auto-style61">&nbsp;</td>
-                    <td class="auto-style37">&nbsp;</td>
-                    <td class="auto-style37">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style35">&nbsp;</td>
-                    <td class="auto-style44" colspan="6">&nbsp;</td>
+                    <td class="auto-style44" colspan="5">&nbsp;</td>
                     <td class="auto-style61">&nbsp;</td>
-                    <td class="auto-style37">&nbsp;</td>
-                    <td class="auto-style37">&nbsp;</td>
                 </tr>
             </table>
         </div>
