@@ -165,7 +165,6 @@
                                 </table>
                             </ItemTemplate>
                         </asp:DataList>
-                        <asp:Button ID="btnOrdenar" runat="server" Height="33px" OnClick="btnOrdenar_Click" Text="Ordenar Alfabéticamente" Width="205px" />
                     </td>
                     <td class="auto-style57" colspan="5">
                         <asp:ListView ID="ListViewSucursales" runat="server" DataSourceID="SqlDataSource_BDSucursal_Sucursales" style="margin-top: 250px" GroupItemCount="3" DataKeyNames="Id_Sucursal">                            
