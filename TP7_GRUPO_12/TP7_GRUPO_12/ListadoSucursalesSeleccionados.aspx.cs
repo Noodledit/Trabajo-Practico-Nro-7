@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Data;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace TP7_GRUPO_12
 {
@@ -11,7 +8,23 @@ namespace TP7_GRUPO_12
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            MostrarSucursalesSeleccionadas();
+        }
+        private void MostrarSucursalesSeleccionadas()
+        {
+            // Verificamos si hay datos en la sesión
+            if (Session["Seleccionadas"] != null)
+            {
+                var lista = Session["Seleccionadas"] as System.Collections.Generic.List<TP7_GRUPO_12.claseSESSION.Sucursal>;
+                gvSucursalesSeleccionadas.DataSource = lista;
+                gvSucursalesSeleccionadas.DataBind();
+            }
+            else
+            {
+                gvSucursalesSeleccionadas.DataSource = null;
+                gvSucursalesSeleccionadas.DataBind();
+                lblMensaje.Text = "No hay sucursales seleccionadas.";
+            }
         }
     }
 }
