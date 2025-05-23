@@ -114,15 +114,6 @@ namespace TP7_GRUPO_12
         protected global::System.Web.UI.WebControls.DataList dlProvincias;
 
         /// <summary>
-        /// Control btnOrdenar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOrdenar;
-
-        /// <summary>
         /// Control ListViewSucursales.
         /// </summary>
         /// <remarks>
