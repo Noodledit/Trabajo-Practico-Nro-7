@@ -81,5 +81,16 @@ namespace TP7_GRUPO_12
                 lblMensaje.Text = "";
             }
         }
+
+        protected void btnOrdenar_Click(object sender, EventArgs e)
+        {
+
+            SqlDataSource_BDSucursal_Sucursales.SelectCommand =
+                "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] " +
+                "FROM [Sucursal] ORDER BY NombreSucursal ASC";
+
+            SqlDataSource_BDSucursal_Sucursales.SelectParameters.Clear();
+            ListViewSucursales.DataBind();
+        }
     }
 }
