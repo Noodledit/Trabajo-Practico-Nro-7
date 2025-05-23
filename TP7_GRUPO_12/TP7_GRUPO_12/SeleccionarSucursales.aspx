@@ -276,7 +276,8 @@
                 </tr>
                 <tr>
                     <td class="auto-style35">
-                        &nbsp;</td>
+                        <asp:Button ID="btnOrdenar" runat="server" OnClick="btnOrdenar_Click" Text="Ordenar Alfabeticamente" />
+                    </td>
                     <td class="auto-style23" colspan="2">
                         &nbsp;</td>
                     <td class="auto-style81" colspan="3">&nbsp;</td>

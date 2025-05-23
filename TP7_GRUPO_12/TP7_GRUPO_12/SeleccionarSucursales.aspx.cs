@@ -36,7 +36,15 @@ namespace TP7_GRUPO_12
         {
             if (e.CommandName == "cmdSeleccionar")
             {
-               
+                //El id se pasa por el CommandArgument
+                int idSucursal = int.Parse(e.CommandArgument.ToString());
+
+                //acceder en el listview el item donde el btn se este precionando
+                ListViewItem item = ((Button)sender).NamingContainer as ListViewItem;
+
+                Label lblNombre = item.FindControl("NombreSucursalLabel") as Label;
+
+
             }
         }
 
@@ -72,6 +80,17 @@ namespace TP7_GRUPO_12
             {
                 lblMensaje.Text = "";
             }
+        }
+
+        protected void btnOrdenar_Click(object sender, EventArgs e)
+        {
+
+            SqlDataSource_BDSucursal_Sucursales.SelectCommand =
+                "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] " +
+                "FROM [Sucursal] ORDER BY NombreSucursal ASC";
+
+            SqlDataSource_BDSucursal_Sucursales.SelectParameters.Clear();
+            ListViewSucursales.DataBind();
         }
     }
 }
