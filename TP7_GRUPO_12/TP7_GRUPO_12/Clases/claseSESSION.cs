@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.SessionState;
 
 namespace TP7_GRUPO_12
 {
@@ -46,6 +48,23 @@ namespace TP7_GRUPO_12
             {
                 HttpContext.Current.Session[SucursalDescripcion] = value;
             }
+        }
+
+        public static void GuardarTablaEnSesion(DataTable tablaSucursales, HttpSessionState session)
+        {
+            if (tablaSucursales != null)
+            {
+                session["Sucursales"] = tablaSucursales;
+            }
+        }
+
+        public static DataTable ObtenerTablaDesdeSesion(HttpSessionState session)
+        {
+            if (session["Sucursales"] != null)
+            {
+                return (DataTable)session["Sucursales"];
+            }
+            return new DataTable(); // Devuelve una tabla vacía si no hay datos en la sesión
         }
 
     }
