@@ -87,6 +87,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\claseSESSION.cs" />
+    <Compile Include="Clases\ConexionBDSucursales.cs" />
+    <Compile Include="Clases\GestionDeTablas.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

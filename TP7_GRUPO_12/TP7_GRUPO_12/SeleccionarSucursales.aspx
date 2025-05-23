@@ -110,7 +110,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style31">
-                        <asp:SqlDataSource ID="SqlDataSource_BDSucursal_Sucursales" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString6 %>" SelectCommand="SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [DireccionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
+                        <%--<asp:SqlDataSource ID="SqlDataSource_BDSucursal_Sucursales" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString6 %>" SelectCommand="SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [DireccionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>--%>
                         </td>
                     <td class="auto-style57" colspan="5">
                         <h1>Listado de Sucursales</h1>
@@ -167,7 +167,7 @@
                         </asp:DataList>
                     </td>
                     <td class="auto-style57" colspan="5">
-                        <asp:ListView ID="ListViewSucursales" runat="server" DataSourceID="SqlDataSource_BDSucursal_Sucursales" style="margin-top: 250px" GroupItemCount="3" DataKeyNames="Id_Sucursal">                            
+                        <asp:ListView ID="ListViewSucursales" runat="server" style="margin-top: 250px" GroupItemCount="3" DataKeyNames="Id_Sucursal">                            
                             <EditItemTemplate>
                                 <td runat="server" style="background-color:#008A8C;color: #FFFFFF;">NombreSucursal:
                                     <asp:TextBox ID="NombreSucursalTextBox" runat="server" Text='<%# Bind("NombreSucursal") %>' />

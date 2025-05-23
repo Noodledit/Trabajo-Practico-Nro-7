@@ -51,15 +51,6 @@ namespace TP7_GRUPO_12
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource_Secundary_BDSucursal_Sucursales;
 
         /// <summary>
-        /// Control SqlDataSource_BDSucursal_Sucursales.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource_BDSucursal_Sucursales;
-
-        /// <summary>
         /// Control txtBuscar.
         /// </summary>
         /// <remarks>
