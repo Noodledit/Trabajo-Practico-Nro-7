@@ -92,8 +92,11 @@ namespace TP7_GRUPO_12
                 ListViewItem item = ((Button)sender).NamingContainer as ListViewItem;
 
                 Label lblNombre = item.FindControl("NombreSucursalLabel") as Label;
+                Label lblDescripcion = item.FindControl("DescripcionSucursalLabel") as Label;
 
-
+                claseSESSION.Sucursal_ID = idSucursal;
+                claseSESSION.Sucursal_Nombre = lblNombre.Text;
+                claseSESSION.Sucursal_Descripcion = lblDescripcion.Text;
             }
         }
     }
