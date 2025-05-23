@@ -42,17 +42,11 @@ namespace TP7_GRUPO_12
         protected global::System.Web.UI.WebControls.HyperLink hlMostrarSucursalesS;
 
         /// <summary>
-<<<<<<< Updated upstream
-        /// Control lblMensaje.
-=======
         /// Control lblMostrarSucursalesSeleccionadas.
->>>>>>> Stashed changes
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-<<<<<<< Updated upstream
-=======
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMostrarSucursalesSeleccionadas;
 
@@ -71,7 +65,6 @@ namespace TP7_GRUPO_12
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
->>>>>>> Stashed changes
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMensaje;
     }

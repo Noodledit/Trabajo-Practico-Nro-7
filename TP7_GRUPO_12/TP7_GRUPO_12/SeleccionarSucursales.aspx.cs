@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.SessionState;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using static TP7_GRUPO_12.claseSESSION;
@@ -16,22 +17,39 @@ namespace TP7_GRUPO_12
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
+        protected void btnProvincia_Command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "cmdProvinciaSelect")
+            {
+                lblMensaje.Text = "Provincia seleccionada: " + e.CommandArgument.ToString();
+                SqlDataSource_BDSucursal_Sucursales.SelectCommand = "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal]" +
+                                                                    " FROM Sucursal WHERE Id_ProvinciaSucursal = @IdProvincia";
+
+                SqlDataSource_BDSucursal_Sucursales.SelectParameters.Clear();
+                SqlDataSource_BDSucursal_Sucursales.SelectParameters.Add("IdProvincia", e.CommandArgument.ToString());
+          
+                lblMensaje.Text = "Provincia seleccionada: " + e.CommandArgument.ToString();
+
+                ListViewSucursales.DataBind();
+            }
+        }
+
         protected void btnSeleccionar_Command(object sender, CommandEventArgs e)
         {
-<<<<<<< Updated upstream
-            if (e.CommandName == "eventoSeleccionar")
-            { 
-                lblMensaje.Text = "Sucursal seleccionada: " + e.CommandArgument.ToString();
-=======
             if (e.CommandName == "cmdSeleccionar")
             {
+                //El id se pasa por el CommandArgument
                 int idSucursal = int.Parse(e.CommandArgument.ToString());
+
+                //acceder en el listview el item donde el btn se este precionando
                 ListViewItem item = ((Button)sender).NamingContainer as ListViewItem;
+               
                 Label lblNombre = item.FindControl("NombreSucursalLabel") as Label;
                 Label lblDescripcion = item.FindControl("DescripcionSucursalLabel") as Label;
 
+                // obtengo el id de la sucursal, el nombre y la descripcion
                 var sucursal = new Sucursal(idSucursal, lblNombre.Text, lblDescripcion.Text);
-
+                // agrego la sucursal a la lista de seleccionadas
                 if (SeleccionarSucursal.AgregarSucursal(Session, sucursal))
                     lblMensaje.Text = "Sucursal seleccionada: " + sucursal.NombreSucursal;
                 else
@@ -53,9 +71,25 @@ namespace TP7_GRUPO_12
 
                 SqlDataSource_BDSucursal_Sucursales.SelectParameters.Clear();
                 SqlDataSource_BDSucursal_Sucursales.SelectParameters.Add("nombre", filtro);
->>>>>>> Stashed changes
             }
 
+            else
+            {
+                SqlDataSource_BDSucursal_Sucursales.SelectCommand = "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal]";
+                SqlDataSource_BDSucursal_Sucursales.SelectParameters.Clear();
+            }
+
+            ListViewSucursales.DataBind();
+
+            // Verifico si la listview esta vacia
+            if (ListViewSucursales.Items.Count == 0)
+            {
+                lblMensaje.Text = "No se encontraron sucursales con ese Nombre.";
+            }
+            else
+            {
+                lblMensaje.Text = "";
+            }
         }
     }
 }
