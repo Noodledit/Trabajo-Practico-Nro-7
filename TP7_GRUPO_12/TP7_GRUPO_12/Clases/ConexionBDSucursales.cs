@@ -22,7 +22,16 @@ namespace TP7_GRUPO_12.Clases
             }
             catch (SqlException ex)
             {
-                return null;
+                string AlternativeConnectionString = "Data Source=localhost;Initial Catalog=BDSucursales;Integrated Security=True;TrustServerCertificate=True";
+                connection = new SqlConnection(AlternativeConnectionString);
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException ex2)
+                {
+                    return null;
+                }
             }
             return connection;
         }

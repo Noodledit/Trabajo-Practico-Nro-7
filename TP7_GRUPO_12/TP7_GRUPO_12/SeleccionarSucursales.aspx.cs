@@ -21,8 +21,8 @@ namespace TP7_GRUPO_12
             if (!IsPostBack)
             {
                 //Carga la lista de provincias al cargar la pagina
-                //ListViewSucursales.DataSource = conexion.ReaderConexion(gestion.stringQuery);
-                //ListViewSucursales.DataBind();
+                ListViewSucursales.DataSource = conexion.ReaderConexion(gestion.stringQuery);
+                ListViewSucursales.DataBind();
             }
         }
 
@@ -73,7 +73,6 @@ namespace TP7_GRUPO_12
 
         protected void btnOrdenar_Click(object sender, EventArgs e) // llena el listview de sucursales ordenadas por nombre
         {
-
             //SqlDataSource_BDSucursal_Sucursales.SelectCommand =
             //    "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] " +
             //    "FROM [Sucursal] ORDER BY NombreSucursal ASC";

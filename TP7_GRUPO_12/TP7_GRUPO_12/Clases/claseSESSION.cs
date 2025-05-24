@@ -15,8 +15,6 @@ namespace TP7_GRUPO_12
         private const string SucursalDescripcion = "DescripcionSucursal";
         private const string SucursalesTabla = "TablaSucursal";
 
-
-
         public static string Sucursal_Nombre
         {
             get
@@ -69,9 +67,5 @@ namespace TP7_GRUPO_12
             }
             return new DataTable(); // Devuelve una tabla vacía si no hay datos en la sesión
         }
-
-
-
-
     }
 }

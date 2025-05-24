@@ -103,8 +103,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style31">
-                        <asp:SqlDataSource ID="SqlDataSource_Secundary_BDSucursal_Sucursales" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style57" colspan="5"></td>
                     <td class="auto-style60"></td>
                 </tr>
@@ -118,7 +117,9 @@
                     <td class="auto-style60"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style67" rowspan="2">&nbsp;</td>
+                    <td class="auto-style67" rowspan="2">
+                        <asp:Button ID="btnOrdenar" runat="server" OnClick="btnOrdenar_Click" Text="Ordenar Alfabeticamente" />
+                    </td>
                     <td class="auto-style68" colspan="5">&nbsp;</td>
                     <td class="auto-style69">
                         &nbsp;</td>
@@ -137,7 +138,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style35">
-                        <asp:SqlDataSource ID="SqlDataSource_BDSucursal_Provincias" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [DescripcionProvincia], [Id_Provincia] FROM [Provincia]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource_BDSucursal_Provincias" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringBDSucursales %>" SelectCommand="SELECT [DescripcionProvincia], [Id_Provincia] FROM [Provincia]"></asp:SqlDataSource>
                     </td>
                     <td class="auto-style24"></td>
                     <td class="auto-style76" colspan="2">
@@ -167,7 +168,7 @@
                         </asp:DataList>
                     </td>
                     <td class="auto-style57" colspan="5">
-                        <asp:ListView ID="ListViewSucursales" runat="server" style="margin-top: 250px" GroupItemCount="3" DataKeyNames="Id_Sucursal" DataSourceID="SqlDataSource_Secundary_BDSucursal_Sucursales">                            
+                        <asp:ListView ID="ListViewSucursales" runat="server" style="margin-top: 250px" GroupItemCount="3" DataKeyNames="Id_Sucursal">                            
                             <EditItemTemplate>
                                 <td runat="server" style="background-color:#008A8C;color: #FFFFFF;">NombreSucursal:
                                     <asp:TextBox ID="NombreSucursalTextBox" runat="server" Text='<%# Bind("NombreSucursal") %>' />
@@ -276,8 +277,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style35">
-                        <asp:Button ID="btnOrdenar" runat="server" OnClick="btnOrdenar_Click" Text="Ordenar Alfabeticamente" />
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style23" colspan="2">
                         &nbsp;</td>
                     <td class="auto-style81" colspan="3">&nbsp;</td>
