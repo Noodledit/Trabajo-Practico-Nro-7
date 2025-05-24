@@ -107,12 +107,9 @@ namespace TP7_GRUPO_12
 
                 }
 
-                /*bool existe = tablita.AsEnumerable().Any(row => row.Field<int>("ID_SUCURSAL") == idSucursal);
-                if (!existe)
-                {*/
 
-                    tablita.Rows.Add(idSucursal, lblNombre.Text, lblDescripcion.Text);
-                //}
+                tablita.Rows.Add(idSucursal, lblNombre.Text, lblDescripcion.Text);
+               
 
                 //guardamos la tabla
                 claseSESSION.GuardarTablaEnSesion(tablita,Session);
