@@ -21,8 +21,8 @@ namespace TP7_GRUPO_12
             if (!IsPostBack)
             {
                 //Carga la lista de provincias al cargar la pagina
-                //ListViewSucursales.DataSource = conexion.ReaderConexion(gestion.stringQuery);
-                //ListViewSucursales.DataBind();
+                ListViewSucursales.DataSource = conexion.ReaderConexion(gestion.stringQuery);
+                ListViewSucursales.DataBind();
             }
         }
 

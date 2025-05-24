@@ -42,13 +42,13 @@ namespace TP7_GRUPO_12
         protected global::System.Web.UI.WebControls.HyperLink hlMostrarSucursalesS;
 
         /// <summary>
-        /// Control SqlDataSource_Secundary_BDSucursal_Sucursales.
+        /// Control btnOrdenar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource_Secundary_BDSucursal_Sucursales;
+        protected global::System.Web.UI.WebControls.Button btnOrdenar;
 
         /// <summary>
         /// Control txtBuscar.
@@ -112,14 +112,5 @@ namespace TP7_GRUPO_12
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView ListViewSucursales;
-
-        /// <summary>
-        /// Control btnOrdenar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOrdenar;
     }
 }
