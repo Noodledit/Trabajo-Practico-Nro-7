@@ -106,9 +106,21 @@
                     <td class="auto-style16">
                         <asp:GridView ID="gvSucursalesSeleccionadas" runat="server" AutoGenerateColumns="False" Width="459px">
                             <Columns>
-                                <asp:TemplateField HeaderText="ID_SUCURSAL"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="NOMBRE"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="DESCRIPCIÓN"></asp:TemplateField>
+                                <asp:TemplateField HeaderText="ID_SUCURSAL">
+                                    <ItemTemplate>
+                                        <asp:Label ID="ID_SUCURSALES" runat="server" Text='<%# Eval("ID_SUCURSAL") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="NOMBRE">
+                                    <ItemTemplate>
+                                        <asp:Label ID="NOMBRE" runat="server" Text='<%# Eval("NOMBRE") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="DESCRIPCIÓN">
+                                    <ItemTemplate>
+                                        <asp:Label ID="DESCRIPCION" runat="server" Text='<%# Eval("DESCRIPCION") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
                     </td>

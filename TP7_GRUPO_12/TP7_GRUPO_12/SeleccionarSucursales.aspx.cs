@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.SessionState;
@@ -20,8 +21,8 @@ namespace TP7_GRUPO_12
             if (!IsPostBack)
             {
                 //Carga la lista de provincias al cargar la pagina
-                ListViewSucursales.DataSource = conexion.ReaderConexion(gestion.stringQuery);
-                ListViewSucursales.DataBind();
+                //ListViewSucursales.DataSource = conexion.ReaderConexion(gestion.stringQuery);
+                //ListViewSucursales.DataBind();
             }
         }
 
@@ -94,6 +95,31 @@ namespace TP7_GRUPO_12
                 Label lblNombre = item.FindControl("NombreSucursalLabel") as Label;
                 Label lblDescripcion = item.FindControl("DescripcionSucursalLabel") as Label;
 
+
+                DataTable tablita = claseSESSION.ObtenerTablaDesdeSesion(Session);
+
+
+                if (tablita.Columns.Count == 0)
+                {
+                    tablita.Columns.Add("ID_SUCURSAL", typeof(int));
+                    tablita.Columns.Add("NOMBRE", typeof(string));
+                    tablita.Columns.Add("DESCRIPCION", typeof(string));
+
+                }
+
+                bool existe = tablita.AsEnumerable().Any(row => row.Field<int>("ID_SUCURSAL") == idSucursal);
+                if (!existe)
+                {
+
+                    tablita.Rows.Add(idSucursal, lblNombre.Text, lblDescripcion.Text);
+                }
+
+                //guardamos la tabla
+                claseSESSION.GuardarTablaEnSesion(tablita,Session);
+
+
+
+                //Esto es actualmente innecesario
                 claseSESSION.Sucursal_ID = idSucursal;
                 claseSESSION.Sucursal_Nombre = lblNombre.Text;
                 claseSESSION.Sucursal_Descripcion = lblDescripcion.Text;
