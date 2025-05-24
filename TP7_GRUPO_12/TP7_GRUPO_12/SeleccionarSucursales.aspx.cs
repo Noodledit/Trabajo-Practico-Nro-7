@@ -36,7 +36,7 @@ namespace TP7_GRUPO_12
                 ListViewSucursales.DataBind();
             }
         }
-
+        
         protected void btnBuscar_Click(object sender, EventArgs e) // llena el listview de sucursales segun el nombre ingresado
         {
             string filtro = txtBuscar.Text.Trim();
@@ -71,16 +71,20 @@ namespace TP7_GRUPO_12
             }
         }
 
-        protected void btnOrdenar_Click(object sender, EventArgs e) // llena el listview de sucursales ordenadas por nombre
+        protected void btnOrdenar_Click(object sender, EventArgs e)
         {
+            
+            string consultaOrdenar = "SELECT NombreSucursal, DescripcionSucursal, URL_Imagen_Sucursal, Id_Sucursal FROM Sucursal ORDER BY NombreSucursal ASC";
 
-            //SqlDataSource_BDSucursal_Sucursales.SelectCommand =
-            //    "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] " +
-            //    "FROM [Sucursal] ORDER BY NombreSucursal ASC";
+            ConexionBDSucursales conexion = new ConexionBDSucursales();
 
-            //SqlDataSource_BDSucursal_Sucursales.SelectParameters.Clear();
-            //ListViewSucursales.DataBind();
+            DataTable tablaSucursalesOrdenada = conexion.ReaderConexion(consultaOrdenar);
+
+            ListViewSucursales.DataSource = tablaSucursalesOrdenada;
+            ListViewSucursales.DataBind();
+
         }
+
 
         protected void btnSeleccionar_Command(object sender, CommandEventArgs e) // Selecciona la sucursal y la guarda en la variable session
         {
