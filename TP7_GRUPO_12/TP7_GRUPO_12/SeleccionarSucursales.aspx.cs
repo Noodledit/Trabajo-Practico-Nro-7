@@ -40,22 +40,19 @@ namespace TP7_GRUPO_12
         protected void btnBuscar_Click(object sender, EventArgs e) // llena el listview de sucursales segun el nombre ingresado
         {
             string filtro = txtBuscar.Text.Trim();
+            GestionDeTablas gestionNombres = new GestionDeTablas();
 
-            //Chequeo que no este vacio y cambio el comando
+            //SI NO ESTA VACIO muestro
             if (!string.IsNullOrEmpty(filtro))
             {
-                //SqlDataSource_BDSucursal_Sucursales.SelectCommand =
-                //    "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] " +
-                //    "FROM [Sucursal] WHERE LOWER(NombreSucursal) LIKE '%' + LOWER(@nombre) + '%'";
-
-                //SqlDataSource_BDSucursal_Sucursales.SelectParameters.Clear();
-                //SqlDataSource_BDSucursal_Sucursales.SelectParameters.Add("nombre", filtro);
+                ListViewSucursales.DataSource = gestionNombres.FiltradoNombre(filtro);
+                ListViewSucursales.DataBind();
             }
 
-            else
+            else //SI ESTA VACIO muestro todo
             {
-                //SqlDataSource_BDSucursal_Sucursales.SelectCommand = "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal]";
-                //SqlDataSource_BDSucursal_Sucursales.SelectParameters.Clear();
+               ListViewSucursales.DataSource = conexion.ReaderConexion(gestion.stringQuery);
+               ListViewSucursales.DataBind();
             }
 
             ListViewSucursales.DataBind();

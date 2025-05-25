@@ -36,7 +36,7 @@ namespace TP7_GRUPO_12.Clases
             return connection;
         }
 
-        public DataTable ReaderConexion(string query, string parametroAAsignar = null) 
+        public DataTable ReaderConexion(string query, string parametroAAsignar = null, string nombreParametro = null) 
         {
             SqlConnection connection = AbrirConexion();
 
@@ -49,9 +49,9 @@ namespace TP7_GRUPO_12.Clases
                 command.Connection = connection;
                 command.CommandText = query; //"SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM Sucursal..."
 
-                if (parametroAAsignar != null)
+                if (parametroAAsignar != null && nombreParametro != null)
                 {
-                    command.Parameters.AddWithValue("IdProvincia", parametroAAsignar);
+                    command.Parameters.AddWithValue(nombreParametro, parametroAAsignar);//tanto para provincia como para nombre
                 }
 
                 reader = command.ExecuteReader();

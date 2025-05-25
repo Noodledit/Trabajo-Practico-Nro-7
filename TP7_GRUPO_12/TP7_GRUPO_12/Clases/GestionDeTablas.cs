@@ -16,19 +16,34 @@ namespace TP7_GRUPO_12.Clases
         {
             get { return query; }
         }
+        
+        //FILTRAR PROVINCIA
         public DataTable FiltradoProvincia(string IdProvincia)
         {
             string queryProvincia = query + "WHERE Id_ProvinciaSucursal = @IdProvincia";
 
             ConexionBDSucursales conexion = new ConexionBDSucursales();
             SqlConnection connection = conexion.AbrirConexion();
-            
+
 
             DataTable TablaDeSucursales = new DataTable();
-            
+
             TablaDeSucursales = conexion.ReaderConexion(queryProvincia, IdProvincia);
 
             return TablaDeSucursales;
+        }
+
+        //FILTRAR NOMBRE
+        public DataTable FiltradoNombre(string nombre)
+        {
+            string queryNombre = query + " WHERE LOWER(NombreSucursal) LIKE '%' + LOWER(@nombre) + '%'";
+            ConexionBDSucursales conexion = new ConexionBDSucursales();
+            SqlConnection connection = conexion.AbrirConexion();
+
+            DataTable tablaDeSucursales = new DataTable();
+            tablaDeSucursales = conexion.ReaderConexion(queryNombre, nombre, "@nombre");
+
+            return tablaDeSucursales;
         }
     }
 }
