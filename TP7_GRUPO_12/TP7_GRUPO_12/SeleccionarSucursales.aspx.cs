@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace TP7_GRUPO_12
     {
         private ConexionBDSucursales conexion = new ConexionBDSucursales();
         private GestionDeTablas gestion = new GestionDeTablas();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
@@ -70,8 +72,7 @@ namespace TP7_GRUPO_12
 
         protected void btnOrdenar_Click(object sender, EventArgs e)
         {
-            
-            string consultaOrdenar = "SELECT NombreSucursal, DescripcionSucursal, URL_Imagen_Sucursal, Id_Sucursal FROM Sucursal ORDER BY NombreSucursal ASC";
+            string consultaOrdenar = gestion.stringQuery + "ORDER BY NombreSucursal ASC";
 
             ConexionBDSucursales conexion = new ConexionBDSucursales();
 
@@ -125,6 +126,19 @@ namespace TP7_GRUPO_12
                 claseSESSION.Sucursal_Nombre = lblNombre.Text;
                 claseSESSION.Sucursal_Descripcion = lblDescripcion.Text;
             }
+        }
+
+        protected void ListViewSucursales_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
+        {
+            DataPager dataPager = (DataPager)ListViewSucursales.FindControl("DPListviewSucursales");
+
+            dataPager.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+
+            string consulta = gestion.stringQuery;
+
+            ListViewSucursales.DataSource = conexion.ReaderConexion(consulta);
+            ListViewSucursales.DataBind();
+
         }
     }
 } //

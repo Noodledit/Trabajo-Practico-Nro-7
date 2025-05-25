@@ -16,7 +16,7 @@ namespace TP7_GRUPO_12.Clases
         {
             get { return query; }
         }
-        
+
         //FILTRAR PROVINCIA
         public DataTable FiltradoProvincia(string IdProvincia)
         {

@@ -137,7 +137,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style35">
-                        <asp:SqlDataSource ID="SqlDataSource_BDSucursal_Provincias" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString2 %>" SelectCommand="SELECT [DescripcionProvincia], [Id_Provincia] FROM [Provincia]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource_BDSucursal_Provincias" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [DescripcionProvincia], [Id_Provincia] FROM [Provincia]"></asp:SqlDataSource>
                     </td>
                     <td class="auto-style24"></td>
                     <td class="auto-style76" colspan="2">
@@ -167,7 +167,7 @@
                         </asp:DataList>
                     </td>
                     <td class="auto-style57" colspan="5">
-                        <asp:ListView ID="ListViewSucursales" runat="server" style="margin-top: 250px" GroupItemCount="3" DataKeyNames="Id_Sucursal">                            
+                        <asp:ListView ID="ListViewSucursales" runat="server" style="margin-top: 250px" GroupItemCount="3" DataKeyNames="Id_Sucursal" OnPagePropertiesChanging="ListViewSucursales_PagePropertiesChanging">                            
                             <EditItemTemplate>
                                 <td runat="server" style="background-color:#008A8C;color: #FFFFFF;">NombreSucursal:
                                     <asp:TextBox ID="NombreSucursalTextBox" runat="server" Text='<%# Bind("NombreSucursal") %>' />
@@ -243,7 +243,7 @@
                                     </tr>
                                     <tr runat="server">
                                         <td runat="server" style="text-align: center;background-color: #FFCC66; font-family: Verdana, Arial, Helvetica, sans-serif;color: #333333">
-                                            <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
+                                            <asp:DataPager ID="DPListviewSucursales" runat="server" PageSize="6">
                                                 <Fields>
                                                     <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
                                                     <asp:NumericPagerField />
