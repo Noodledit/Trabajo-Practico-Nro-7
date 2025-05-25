@@ -20,7 +20,7 @@ namespace TP7_GRUPO_12.Clases
         //FILTRAR PROVINCIA
         public DataTable FiltradoProvincia(string IdProvincia)
         {
-            string queryProvincia = query + "WHERE Id_ProvinciaSucursal = @IdProvincia";
+            string queryProvincia = query + "WHERE Id_ProvinciaSucursal = @ParametoComparado";
 
             ConexionBDSucursales conexion = new ConexionBDSucursales();
             SqlConnection connection = conexion.AbrirConexion();
@@ -36,12 +36,12 @@ namespace TP7_GRUPO_12.Clases
         //FILTRAR NOMBRE
         public DataTable FiltradoNombre(string nombre)
         {
-            string queryNombre = query + " WHERE LOWER(NombreSucursal) LIKE '%' + LOWER(@nombre) + '%'";
+            string queryNombre = query + " WHERE LOWER(NombreSucursal) LIKE '%' + LOWER(@ParametoComparado) + '%'";
             ConexionBDSucursales conexion = new ConexionBDSucursales();
             SqlConnection connection = conexion.AbrirConexion();
 
             DataTable tablaDeSucursales = new DataTable();
-            tablaDeSucursales = conexion.ReaderConexion(queryNombre, nombre, "@nombre");
+            tablaDeSucursales = conexion.ReaderConexion(queryNombre, nombre);
 
             return tablaDeSucursales;
         }
