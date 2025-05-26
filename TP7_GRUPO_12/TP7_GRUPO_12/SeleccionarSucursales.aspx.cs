@@ -37,7 +37,19 @@ namespace TP7_GRUPO_12
                 GestionDeTablas gestion = new GestionDeTablas();
                 ListViewSucursales.DataSource = gestion.FiltradoProvincia(e.CommandArgument.ToString(), ref actualQuery);
                 Session["QueryActual"] = actualQuery;
+
                 lblMensaje.Text = actualQuery;
+
+                //Acomodamos para que no haya problemas al cargar las provincias desde la pagina 2 o 3 del datalist
+                DataPager dataPager = (DataPager)ListViewSucursales.FindControl("DPListviewSucursales");
+
+                if (dataPager != null)
+                {
+                    dataPager.SetPageProperties(0, dataPager.PageSize, false);
+                }
+                
+
+
                 ListViewSucursales.DataBind();
             }
         }
