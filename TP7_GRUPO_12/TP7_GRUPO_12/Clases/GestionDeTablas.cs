@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using System.Data;
+using System.Web.UI.WebControls;
 
 namespace TP7_GRUPO_12.Clases
 {
@@ -36,6 +37,15 @@ namespace TP7_GRUPO_12.Clases
             SqlConnection connection = conexion.AbrirConexion();
 
             return conexion.ReaderConexion(QueryNombre, ref actualQuery, nombre);
+        }
+
+        public static void IrAPrimeraPagina(ListView listView, string idDataPager)
+        {
+            DataPager dataPager = listView.FindControl(idDataPager) as DataPager;
+            if (dataPager != null)
+            {
+                dataPager.SetPageProperties(0, dataPager.PageSize, true);
+            }
         }
     }
 }
