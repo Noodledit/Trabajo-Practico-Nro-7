@@ -11,11 +11,8 @@
         .auto-style1 {
             width: 100%;
         }
-        .auto-style15 {
-            width: 114px;
-        }
         .auto-style13 {
-            width: 187px;
+            width: 259px;
         }
         .auto-style9 {
             width: 207px;
@@ -23,13 +20,9 @@
         .auto-style10 {
             width: 40px;
         }
-        .auto-style3 {
-            height: 23px;
-            width: 114px;
-        }
         .auto-style14 {
             height: 23px;
-            width: 187px;
+            width: 259px;
         }
         .auto-style11 {
             height: 23px;
@@ -40,11 +33,37 @@
             width: 40px;
         }
         .auto-style16 {
-            width: 587px;
+            width: 408px;
         }
         .auto-style17 {
             height: 23px;
-            width: 587px;
+            width: 408px;
+        }
+        .auto-style18 {
+            height: 23px;
+        }
+        .auto-style19 {
+            width: 153px;
+        }
+        .auto-style20 {
+            height: 23px;
+            width: 153px;
+        }
+        .auto-style31 {
+            height: 23px;
+            width: 14%;
+        }
+        .auto-style57 {
+            height: 23px;
+            width: 835px;
+        }
+        .auto-style80 {
+            height: 23px;
+            width: 935px;
+        }
+        .auto-style60 {
+            height: 23px;
+            width: 30%;
         }
         </style>
 </head>
@@ -53,33 +72,29 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style15">&nbsp;</td>
-                    <td class="auto-style16">
+                    <td class="auto-style31"></td>
+                    <td class="auto-style57">
                         <asp:HyperLink ID="hlListadoSucursales" runat="server" Font-Overline="False" Font-Underline="True" ForeColor="Blue" NavigateUrl="~/SeleccionarSucursales.aspx">Listado de Sucursales</asp:HyperLink>
                     </td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style9">
+                    <td class="auto-style80">
                         <asp:HyperLink ID="hlMostrarSucursalesS" runat="server" Font-Underline="True" ForeColor="Blue">Mostrar Sucursales Seleccionadas</asp:HyperLink>
                     </td>
-                    <td class="auto-style10">&nbsp;</td>
+                    <td class="auto-style60">
+                        &nbsp;</td>
                 </tr>
+            </table>
+            <table class="auto-style1">
                 <tr>
-                    <td class="auto-style15">&nbsp;</td>
-                    <td class="auto-style16">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style9">&nbsp;</td>
-                    <td class="auto-style10">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3"></td>
+                    <td class="auto-style20"></td>
                     <td class="auto-style17">
                         &nbsp;</td>
-                    <td class="auto-style14"></td>
-                    <td class="auto-style11"></td>
+                    <td class="auto-style14">&nbsp;</td>
+                    <td class="auto-style11">
+                    </td>
                     <td class="auto-style12"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style3"></td>
+                    <td class="auto-style20"></td>
                     <td class="auto-style17">
                         <asp:Label ID="lblMostrarSucursalesSeleccionadas" runat="server" Font-Bold="True" Font-Size="22pt" Text="Mostrar sucursales seleccionadas"></asp:Label>
                     </td>
@@ -88,22 +103,16 @@
                     <td class="auto-style12"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style3"></td>
-                    <td class="auto-style17"></td>
+                    <td class="auto-style20"></td>
+                    <td class="auto-style17">
+                        &nbsp;</td>
                     <td class="auto-style14"></td>
                     <td class="auto-style11"></td>
                     <td class="auto-style12"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style3"></td>
-                    <td class="auto-style17">&nbsp;</td>
-                    <td class="auto-style14"></td>
-                    <td class="auto-style11"></td>
-                    <td class="auto-style12"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style15">&nbsp;</td>
-                    <td class="auto-style16">
+                    <td class="auto-style20"></td>
+                    <td class="auto-style18" colspan="2">
                         <asp:GridView ID="gvSucursalesSeleccionadas" runat="server" AutoGenerateColumns="False" Width="459px">
                             <Columns>
                                 <asp:TemplateField HeaderText="ID_SUCURSAL">
@@ -124,26 +133,18 @@
                             </Columns>
                         </asp:GridView>
                     </td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style9">&nbsp;</td>
-                    <td class="auto-style10">&nbsp;</td>
+                    <td class="auto-style11"></td>
+                    <td class="auto-style12"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style15">&nbsp;</td>
-                    <td class="auto-style16">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style9">&nbsp;</td>
-                    <td class="auto-style10">&nbsp;</td>
+                    <td class="auto-style20"></td>
+                    <td class="auto-style17"></td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style11"></td>
+                    <td class="auto-style12"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style15">&nbsp;</td>
-                    <td class="auto-style16">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style9">&nbsp;</td>
-                    <td class="auto-style10">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3"></td>
+                    <td class="auto-style20"></td>
                     <td class="auto-style17">
                         <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                     </td>
@@ -152,13 +153,14 @@
                     <td class="auto-style12"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style15">&nbsp;</td>
-                    <td class="auto-style16">&nbsp;</td>
+                    <td class="auto-style19">&nbsp;</td>
+                    <td class="auto-style16">
+                        &nbsp;</td>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style9">&nbsp;</td>
                     <td class="auto-style10">&nbsp;</td>
                 </tr>
-            </table>
+                </table>
         </div>
     </form>
 </body>

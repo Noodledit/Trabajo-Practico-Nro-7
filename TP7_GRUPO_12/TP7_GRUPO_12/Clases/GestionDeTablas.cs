@@ -10,40 +10,32 @@ namespace TP7_GRUPO_12.Clases
     public class GestionDeTablas
     {
         private static string query = "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM Sucursal ";
+
         public GestionDeTablas() { }
 
-        public string stringQuery
+        public string PrincipalQuery
         {
             get { return query; }
         }
 
         //FILTRAR PROVINCIA
-        public DataTable FiltradoProvincia(string IdProvincia)
+        public DataTable FiltradoProvincia(string IdProvincia, ref string actualQuery)
         {
-            string queryProvincia = query + "WHERE Id_ProvinciaSucursal = @ParametoComparado";
-
+            string provinciaQuery = query + "WHERE Id_ProvinciaSucursal = @ParametroComparado";
             ConexionBDSucursales conexion = new ConexionBDSucursales();
             SqlConnection connection = conexion.AbrirConexion();
 
-
-            DataTable TablaDeSucursales = new DataTable();
-
-            TablaDeSucursales = conexion.ReaderConexion(queryProvincia, IdProvincia);
-
-            return TablaDeSucursales;
+            return conexion.ReaderConexion(provinciaQuery ,ref actualQuery, IdProvincia);
         }
 
         //FILTRAR NOMBRE
-        public DataTable FiltradoNombre(string nombre)
+        public DataTable FiltradoNombre(string nombre, ref string actualQuery)
         {
-            string queryNombre = query + " WHERE LOWER(NombreSucursal) LIKE '%' + LOWER(@ParametoComparado) + '%'";
+            string QueryNombre = query + " WHERE LOWER(NombreSucursal) LIKE '%' + LOWER(@ParametroComparado) + '%'";
             ConexionBDSucursales conexion = new ConexionBDSucursales();
             SqlConnection connection = conexion.AbrirConexion();
 
-            DataTable tablaDeSucursales = new DataTable();
-            tablaDeSucursales = conexion.ReaderConexion(queryNombre, nombre);
-
-            return tablaDeSucursales;
+            return conexion.ReaderConexion(QueryNombre, ref actualQuery, nombre);
         }
     }
 }

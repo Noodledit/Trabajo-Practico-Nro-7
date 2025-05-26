@@ -11,8 +11,6 @@ namespace TP7_GRUPO_12.Clases
     {
         private static string connectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=BDSucursales;Integrated Security=True;TrustServerCertificate=True";     
 
-        //SqlDataReader reader;
-
         public SqlConnection AbrirConexion()
         {
             SqlConnection connection = new SqlConnection(connectionString);
@@ -36,7 +34,7 @@ namespace TP7_GRUPO_12.Clases
             return connection;
         }
 
-        public DataTable ReaderConexion(string query, string parametroAAsignar = null) 
+        public DataTable ReaderConexion(string query, ref string actualQuery, string parametroAAsignar = null) 
         {
             SqlConnection connection = AbrirConexion();
 
@@ -51,8 +49,10 @@ namespace TP7_GRUPO_12.Clases
 
                 if (parametroAAsignar != null)
                 {
-                    command.Parameters.AddWithValue("ParametoComparado", parametroAAsignar);//tanto para provincia como para nombre
+                    command.Parameters.AddWithValue("@ParametroComparado", parametroAAsignar);//tanto para provincia como para nombre
                 }
+
+                actualQuery = query.Replace("@ParametroComparado",parametroAAsignar);
 
                 reader = command.ExecuteReader();
                 tablaSucursales.Load(reader);
@@ -62,8 +62,5 @@ namespace TP7_GRUPO_12.Clases
             }
             return tablaSucursales;
         }
-
-
-
     }
 }
