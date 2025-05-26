@@ -16,14 +16,16 @@ namespace TP7_GRUPO_12
     {
         private ConexionBDSucursales conexion = new ConexionBDSucursales();
         private GestionDeTablas gestion = new GestionDeTablas();
-        
+        private string actualQuery;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             if (!IsPostBack)
             {
                 //Carga la lista de provincias al cargar la pagina
-                ListViewSucursales.DataSource = conexion.ReaderConexion(gestion.stringQuery);
+                ListViewSucursales.DataSource = conexion.ReaderConexion(gestion.PrincipalQuery, ref actualQuery);
+                Session["QueryActual"] = actualQuery;
                 ListViewSucursales.DataBind();
             }
         }
@@ -33,8 +35,9 @@ namespace TP7_GRUPO_12
             if (e.CommandName == "cmdProvinciaSelect")
             {
                 GestionDeTablas gestion = new GestionDeTablas();
-                ListViewSucursales.DataSource = gestion.FiltradoProvincia(e.CommandArgument.ToString());
-
+                ListViewSucursales.DataSource = gestion.FiltradoProvincia(e.CommandArgument.ToString(), ref actualQuery);
+                Session["QueryActual"] = actualQuery;
+                lblMensaje.Text = actualQuery;
                 ListViewSucursales.DataBind();
             }
         }
@@ -47,14 +50,17 @@ namespace TP7_GRUPO_12
             //SI NO ESTA VACIO muestro
             if (!string.IsNullOrEmpty(filtro))
             {
-                ListViewSucursales.DataSource = gestionNombres.FiltradoNombre(filtro);
+                ListViewSucursales.DataSource = gestionNombres.FiltradoNombre(filtro, ref actualQuery);
+                Session["QueryActual"] = actualQuery;
                 ListViewSucursales.DataBind();
             }
 
             else //SI ESTA VACIO muestro todo
             {
-               ListViewSucursales.DataSource = conexion.ReaderConexion(gestion.stringQuery);
-               ListViewSucursales.DataBind();
+                ListViewSucursales.DataSource = conexion.ReaderConexion(gestion.PrincipalQuery, ref actualQuery);
+                Session["QueryActual"] = actualQuery;
+                ListViewSucursales.DataBind();
+
             }
 
             ListViewSucursales.DataBind();
@@ -68,19 +74,23 @@ namespace TP7_GRUPO_12
             {
                 lblMensaje.Text = "";
             }
+
+            //lblMensaje.Text = actualQuery;
+
         }
 
         protected void btnOrdenar_Click(object sender, EventArgs e)
         {
-            string consultaOrdenar = gestion.stringQuery + "ORDER BY NombreSucursal ASC";
+            string inOrderQuery = gestion.PrincipalQuery + "ORDER BY NombreSucursal ASC";
 
             ConexionBDSucursales conexion = new ConexionBDSucursales();
 
-            DataTable tablaSucursalesOrdenada = conexion.ReaderConexion(consultaOrdenar);
+            DataTable tablaSucursalesOrdenada = conexion.ReaderConexion(inOrderQuery, ref actualQuery);
+
+            Session["QueryActual"] = actualQuery;
 
             ListViewSucursales.DataSource = tablaSucursalesOrdenada;
             ListViewSucursales.DataBind();
-
         }
 
 
@@ -97,34 +107,23 @@ namespace TP7_GRUPO_12
                 Label lblNombre = item.FindControl("NombreSucursalLabel") as Label;
                 Label lblDescripcion = item.FindControl("DescripcionSucursalLabel") as Label;
 
-
                 DataTable tablita = claseSESSION.ObtenerTablaDesdeSesion(Session);
-
 
                 if (tablita.Columns.Count == 0)
                 {
                     tablita.Columns.Add("ID_SUCURSAL", typeof(int));
                     tablita.Columns.Add("NOMBRE", typeof(string));
                     tablita.Columns.Add("DESCRIPCION", typeof(string));
-
                 }
 
                 bool existe = tablita.AsEnumerable().Any(row => row.Field<int>("ID_SUCURSAL") == idSucursal);
                 if (!existe)
                 {
-
                     tablita.Rows.Add(idSucursal, lblNombre.Text, lblDescripcion.Text);
                 }
 
                 //guardamos la tabla
                 claseSESSION.GuardarTablaEnSesion(tablita,Session);
-
-
-
-                //Esto es actualmente innecesario
-                claseSESSION.Sucursal_ID = idSucursal;
-                claseSESSION.Sucursal_Nombre = lblNombre.Text;
-                claseSESSION.Sucursal_Descripcion = lblDescripcion.Text;
             }
         }
 
@@ -134,11 +133,10 @@ namespace TP7_GRUPO_12
 
             dataPager.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
 
-            string consulta = gestion.stringQuery;
+            ListViewSucursales.DataSource = conexion.ReaderConexion(Session["QueryActual"]?.ToString(), ref actualQuery);
+            Session["QueryActual"] = actualQuery;
 
-            ListViewSucursales.DataSource = conexion.ReaderConexion(consulta);
             ListViewSucursales.DataBind();
-
         }
     }
 } //
